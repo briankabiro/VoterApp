@@ -10,47 +10,41 @@ import SwipeCards from 'react-native-swipe-cards';
 /* 
 	how to display a text on screen when you done something
 */
-var image1 = require('../assets/dida.jpg');
-var image2 = require('../assets/obama.jpg');
-var image3 = require('../assets/raila.jpg');
-var image4 = require('../assets/kalonzo.jpg');
-var image5 = require('../assets/uhuru.jpg');
+var image1 = require('../assets/kidero.jpg');
+var image2 = require('../assets/sonko.jpg');
+var image3 = require('../assets/mudavadi.jpg');
+var image4 = require('../assets/obama.jpg');
 
 const Cards = [{
-	"id":1,
-	"first_name":"Uhuru Kenyatta",
+	id:1,
+	"first_name":"Evans Kidero",
+	"party":"CORD",
+	"color":"orange",
+	"image":image1
+
+},{
+	id:2,
+	"first_name":"Mike Sonko",
 	"party":"Jubilee",
-	"image":image5,
-	color:'darkred'
-},{
-	"id":2,
-	"first_name":"Kalonzo Musyoka",
-	"party":"CORD",
-	"image":image4,
-	color:'lightblue'
-},{
-	"id":3,
-	"first_name":"Raila Odinga",
-	"party":"CORD",
-	"image":image3,
-	color:'orange'
-},{
-	"id":4,
-	"first_name":"Abduba Dida",
-	"party":"ARN",
-	"image":image1,
-	color:'lightblue'
-},{
-	"id":5,
-	"first_name":"Barrack Obama",
-	"party":"KANU",
+	"color":"red",
 	"image":image2,
-	color:'brown'
+},{
+	id:3,
+	"first_name":"Musalia Mudavadi",
+	"party":"ANC",
+	"color":"green",
+	"image":image3
+},{
+	id:4,
+	"first_name":"Barrack Obama",
+	"party":"MaHustla Party",
+	"color":"blue",
+	"image":image4
 }];
 
 var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2 });
 
-export default class Main extends Component{
+export default class Governor extends Component{
 	constructor(props) {
 	  super(props);
 	  this.state = {
@@ -119,9 +113,6 @@ const styles = StyleSheet.create({
 		color:'black',
 		fontSize:20,
 		alignSelf:'center'
-	},
-	card:{
-
 	},
 	noCard:{
 		height:350,

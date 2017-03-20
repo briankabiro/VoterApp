@@ -10,12 +10,14 @@ import {
   View
 } from 'react-native';
 import Main from './app/components/main';
+import Home from './app/components/Home';
+import Governor from './app/components/governor';
 
 export default class VoterApp extends Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <Main />
+        <Governor />
       </View>
     );
   }

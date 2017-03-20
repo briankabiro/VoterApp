@@ -1,8 +1,9 @@
-import React, {Component} from 'react-native';
+import React, {Component} from 'react';
 import {
 	View,
 	Text,
-	StyleSheet
+	StyleSheet,
+	TouchableOpacity
 } from 'react-native'
 
 export default class Home extends Component{
@@ -10,12 +11,17 @@ export default class Home extends Component{
 		return(
 			<View>
 				<Text style={styles.header}>Vote For</Text>
-				<View style={styles.button}>
-					<Text>President</Text>
-				</View>
-				<View style={styles.button}>
-					<Text>Governor of Nairobi</Text>
-				</View>
+				<TouchableOpacity>	
+					<View style={styles.button}>
+						<Text style={styles.position}>President</Text>
+					</View>
+				</TouchableOpacity>
+					
+				<TouchableOpacity>
+					<View style={styles.button}>
+						<Text style={styles.position}>Governor of Nairobi</Text>
+					</View>
+				</TouchableOpacity>
 			</View>
 		)
 	}
@@ -23,10 +29,22 @@ export default class Home extends Component{
 
 const styles = StyleSheet.create({
 	header:{
-		fontSize:15
+		fontSize:17,
+		textAlign:'center',
+		color:'black'
 	},
 	button:{
 		backgroundColor:'green',
-		borderRadius:5
+		borderRadius:5.,
+		width:200,
+		height:30,
+		marginBottom:10,
+		justifyContent:'center',
+		alignItems:'center',
+		marginTop:10,
+		alignSelf:'center'
+	},
+	position:{
+		color:'white'
 	}
 })
