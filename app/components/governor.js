@@ -12,14 +12,16 @@ import SwipeCards from 'react-native-swipe-cards';
 */
 var image1 = require('../assets/kidero.jpg');
 var image2 = require('../assets/sonko.jpg');
-var image3 = require('../assets/mudavadi.jpg');
+var image3 = require('../assets/peter-kenneth.jpg');
 var image4 = require('../assets/obama.jpg');
+var image5 = require('../assets/sakaja.jpg');
+var image6 = require('../assets/margaret-wanjiru.jpg');
 
 const Cards = [{
 	id:1,
 	"first_name":"Evans Kidero",
 	"party":"CORD",
-	"color":"orange",
+	"color":"#F57C00",
 	"image":image1
 
 },{
@@ -30,16 +32,28 @@ const Cards = [{
 	"image":image2,
 },{
 	id:3,
-	"first_name":"Musalia Mudavadi",
-	"party":"ANC",
-	"color":"green",
+	"first_name":"Peter Kenneth",
+	"party":"Jubilee",
+	"color":"darkred",
 	"image":image3
 },{
 	id:4,
 	"first_name":"Barrack Obama",
 	"party":"MaHustla Party",
-	"color":"blue",
+	"color":"#336699",
 	"image":image4
+},{
+	id:5,
+	"first_name":"Johnson Sakaja",
+	"party":"TNA",
+	"color":"#fc0000",
+	"image":image5
+},{
+	id:6,
+	"first_name":"Margaret Wanjiru",
+	"party":"Jubilee",
+	"color":'#fc0000',
+	"image":image6
 }];
 
 var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -73,8 +87,8 @@ export default class Governor extends Component{
 	noMore(){
 		return(
 			<View style={styles.noCard}>
-				<Text>Seems Like there isn't a Valid Candidate running for President</Text>
-				<Text>We might vote for you, give it a try</Text>
+				<Text style={styles.noCardText}>Seems Like there isn't a Valid Candidate running for Governor.</Text>
+				<Text style={styles.noCardText}>We might vote for you, give it a try</Text>
 			</View>
 		)
 	}
@@ -85,7 +99,7 @@ export default class Governor extends Component{
 					<Text style={styles.heading}>Aspirants</Text>
 					<ListView 
 						horizontal={true}
-						showHorizontalScrollIndicator = {false}
+						showHorizontalScrollIndicator = {true}
 						dataSource = {this.state.dataSource}
 						renderRow = {(rowData) => this.eachPic(rowData)}
 					/>
@@ -118,7 +132,8 @@ const styles = StyleSheet.create({
 		height:350,
 		width:300,
 		borderColor:'#e3e3e3',
-		borderWidth:2	
+		borderWidth:2,
+		justifyContent:'center',
 	},
 	candidateImage:{
 		height:280,
@@ -135,5 +150,10 @@ const styles = StyleSheet.create({
 	},
 	party:{
 		color:'black'
+	},
+	noCardText:{
+		color:'black',
+		fontSize:17,
+		textAlign:'center'
 	}
 })

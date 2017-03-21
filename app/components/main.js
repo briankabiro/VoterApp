@@ -10,10 +10,10 @@ import SwipeCards from 'react-native-swipe-cards';
 /* 
 	how to display a text on screen when you done something
 */
-var image1 = require('../assets/dida.jpg');
+var image1 = require('../assets/dida1.jpg');
 var image2 = require('../assets/obama.jpg');
 var image3 = require('../assets/raila.jpg');
-var image4 = require('../assets/kalonzo.jpg');
+var image4 = require('../assets/philipMurgor.jpg');
 var image5 = require('../assets/uhuru.jpg');
 
 const Cards = [{
@@ -25,9 +25,9 @@ const Cards = [{
 },{
 	"id":2,
 	"first_name":"Kalonzo Musyoka",
-	"party":"CORD",
+	"party":"URN",
 	"image":image4,
-	color:'lightblue'
+	color:'yellow'
 },{
 	"id":3,
 	"first_name":"Raila Odinga",

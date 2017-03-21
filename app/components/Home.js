@@ -11,13 +11,13 @@ export default class Home extends Component{
 		return(
 			<View>
 				<Text style={styles.header}>Vote For</Text>
-				<TouchableOpacity>	
+				<TouchableOpacity onPress={()=> this.props.navigation.navigate('President')}>	
 					<View style={styles.button}>
 						<Text style={styles.position}>President</Text>
 					</View>
 				</TouchableOpacity>
 					
-				<TouchableOpacity>
+				<TouchableOpacity onPress={()=> this.props.navigation.navigate('Governor')}>
 					<View style={styles.button}>
 						<Text style={styles.position}>Governor of Nairobi</Text>
 					</View>
