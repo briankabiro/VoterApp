@@ -3,25 +3,48 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	TouchableOpacity
+	TouchableOpacity,
+	ListView
 } from 'react-native'
+const ds = new ListView.DataSource({ rowHasChanged:(r1,r2) => r1 !== r2});
+
+const data = [{
+	id:1,
+	"post":'President'
+},{
+	id:2,
+	"post":'Governor of Nairobi'
+},{
+	id:3,
+	"post":'Nasa Flagbearer'
+}];
 
 export default class Home extends Component{
+	constructor(props) {
+	  super(props);
+	
+	  this.state = {
+	  	datasource:ds.cloneWithRows(data);
+	  };
+	}
+
+	eachButton(x){
+		return(
+			<TouchableOpacity onPress={()=> this.props.navigation.navigate('President')}>	
+					<View style={styles.button}>
+						<Text style={styles.position}>{x.post}</Text>
+					</View>
+			</TouchableOpacity>
+		)
+	}
 	render(){
 		return(
 			<View>
 				<Text style={styles.header}>Vote For</Text>
-				<TouchableOpacity onPress={()=> this.props.navigation.navigate('President')}>	
-					<View style={styles.button}>
-						<Text style={styles.position}>President</Text>
-					</View>
-				</TouchableOpacity>
-					
-				<TouchableOpacity onPress={()=> this.props.navigation.navigate('Governor')}>
-					<View style={styles.button}>
-						<Text style={styles.position}>Governor of Nairobi</Text>
-					</View>
-				</TouchableOpacity>
+				<ListView
+					dataSource:{this.state.datasource}
+					renderRow={(rowData) => eachButton(rowData)}
+				/>
 			</View>
 		)
 	}

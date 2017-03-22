@@ -120,9 +120,6 @@ const styles = StyleSheet.create({
 		fontSize:20,
 		alignSelf:'center'
 	},
-	card:{
-
-	},
 	noCard:{
 		height:350,
 		width:300,
