@@ -10,13 +10,15 @@ const ds = new ListView.DataSource({ rowHasChanged:(r1,r2) => r1 !== r2});
 
 const data = [{
 	id:1,
-	"post":'President'
+	"post":'President',
+	"route":"Main"
 },{
 	id:2,
-	"post":'Governor of Nairobi'
+	"post":'Governor of Nairobi',
+	"route":"Governor"
 },{
 	id:3,
-	"post":'Nasa Flagbearer'
+	"post":'Nasa Flagbearer',
 }];
 
 export default class Home extends Component{
@@ -30,7 +32,7 @@ export default class Home extends Component{
 
 	eachButton(x){
 		return(
-			<TouchableOpacity onPress={()=> this.props.navigation.navigate('President')}>	
+			<TouchableOpacity onPress={()=> this.props.navigation.navigate({x.route})}>	
 					<View style={styles.button}>
 						<Text style={styles.position}>{x.post}</Text>
 					</View>
